@@ -1,4 +1,4 @@
-udo: required
+sudo: required
 
 os: linux
 
@@ -15,5 +15,6 @@ script:
   - docker-compose -f docker/docker-compose.yml exec node yarn test
 
 after_success:
+  - docker-compose -f docker/docker-compose.yml exec node yarn coverage
   - docker-compose -f docker/docker-compose.yml stop
   - docker-compose -f docker/docker-compose.yml down -v --remove-orphans
