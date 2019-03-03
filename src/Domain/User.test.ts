@@ -7,12 +7,7 @@ import Email from '../Shared/Email';
 
 const MOCK_NAME = 'Hadi';
 const MOCK_EMAIL = 'hadi@mailservice.dev';
-const MOCK_INVALID_NAMES = [
-  'H4di',
-  'H@di',
-  'H£do!n',
-  'Ben^',
-];
+const MOCK_INVALID_NAMES = ['H4di', 'H@di', 'H£do!n', 'Ben^'];
 
 describe('testing `User` that', () => {
   let sut: User,
@@ -33,8 +28,18 @@ describe('testing `User` that', () => {
     sut = new User(mockedNameInstance, mockedEmailInstance);
   });
 
-  it('should be instantiable', () => {
+  it('should be instantiable via constructor', () => {
     expect(sut).to.be.instanceOf(User);
+  });
+
+  describe('and also from static method `create`', () => {
+    beforeEach(() => {
+      sut = User.create(MOCK_NAME, MOCK_EMAIL);
+    });
+
+    it('should be instantiable via create method', () => {
+      expect(User.create(MOCK_NAME, MOCK_EMAIL)).to.be.instanceOf(User);
+    });
   });
 
   it('should have `name` property of `User`', () => {
@@ -66,7 +71,9 @@ describe('testing `User` that', () => {
   });
 
   for (let i in MOCK_INVALID_NAMES) {
-    it(`should throw an error when trying to instantiate with invalid name: ${MOCK_INVALID_NAMES[i]}`, () => {
+    it(`should throw an error when trying to instantiate with invalid name: ${
+      MOCK_INVALID_NAMES[i]
+    }`, () => {
       try {
         new Name(MOCK_INVALID_NAMES[i]);
       } catch (e) {
