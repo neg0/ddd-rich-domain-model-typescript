@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "author": "Hadi",
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",

@@ -7,6 +7,12 @@ import Email from '../Shared/Email';
 
 const MOCK_NAME = 'Hadi';
 const MOCK_EMAIL = 'hadi@mailservice.dev';
+const MOCK_INVALID_NAMES = [
+  'H4di',
+  'H@di',
+  'H£do!n',
+  'Ben^',
+];
 
 describe('testing `User` that', () => {
   let sut: User,
@@ -58,4 +64,14 @@ describe('testing `User` that', () => {
       verify(mockedEmail.value).once();
     });
   });
+
+  for (let i in MOCK_INVALID_NAMES) {
+    it(`should throw an error when trying to instantiate with invalid name: ${MOCK_INVALID_NAMES[i]}`, () => {
+      try {
+        new Name(MOCK_INVALID_NAMES[i]);
+      } catch (e) {
+        expect(e).to.be.instanceOf(Error);
+      }
+    });
+  }
 });
