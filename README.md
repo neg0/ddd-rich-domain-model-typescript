@@ -1,4 +1,4 @@
-<p><img src="https://travis-ci.org/neg0/ddd-rich-domain-model-typescript.svg?branch=master" alt="build:passed"></p>
+[![Build Status](https://travis-ci.org/neg0/ddd-rich-domain-model-typescript.svg?branch=master)](https://travis-ci.org/neg0/ddd-rich-domain-model-typescript)
 
 # Rich Domain Model in TypeScript
 Example of Domain-Drive Development using Rich Domain Models in TDD

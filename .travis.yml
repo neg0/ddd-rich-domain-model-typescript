@@ -11,8 +11,8 @@ before_install:
   - docker-compose -f docker/docker-compose.yml up -d
 
 script:
-  - docker-compose -f docker/docker-compose.yml exec yarn install
-  - docker-compose -f docker/docker-compose.yml exec yarn test
+  - docker-compose -f docker/docker-compose.yml exec node yarn install
+  - docker-compose -f docker/docker-compose.yml exec node yarn test
 
 after_success:
   - docker-compose -f docker/docker-compose.yml stop

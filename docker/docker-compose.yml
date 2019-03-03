@@ -1,4 +1,4 @@
-version: "2.4"
+version: "2.2"
 services:
   node:
     image: node:8
@@ -11,5 +11,5 @@ services:
       - rdm_node
 
 networks:
-  rdm_node_network:
+  rdm_node:
     driver: bridge
