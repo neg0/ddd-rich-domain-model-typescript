@@ -1,0 +1,6 @@
+version: "2.4"
+services:
+  node:
+    image: node:8
+    container_name: tilde_node
+    tty: true

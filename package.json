@@ -1,0 +1,35 @@
+{
+  "name": "DDD-Rich-Domain-Model-TypeScript",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "author": "Hadi",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
+    "prettier": "^1.16.4",
+    "ts-mockito": "^2.3.1",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.test.ts"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
+  },
+  "scripts": {
+    "test": "nyc mocha --require ts-node/register src/**/*.test.ts"
+  }
+}
