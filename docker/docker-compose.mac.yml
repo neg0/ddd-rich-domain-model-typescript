@@ -4,7 +4,7 @@ services:
     image: node:8
     container_name: node_rdm
     volumes:
-      - ./..:/usr/local/rdm
+      - ./..:/usr/local/rdm:cached
     tty: true
     working_dir: /usr/local/rdm
     networks:
